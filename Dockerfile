@@ -13,10 +13,7 @@ COPY ./app /var/www/html
 # Apache mod_rewrite
 RUN a2enmod rewrite
 
-
 # Php config install extensions
-
-# RUN pecl config-set php_ini "$PHP_INI_DIR/php.ini"
 RUN apt-get update && apt-get install -y \
         libicu-dev --no-install-recommends && \
     # pecl channel-update pecl.php.net && \
