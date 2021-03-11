@@ -10,8 +10,9 @@ ENV LANGUAGE en_US.UTF-8
 
 COPY ./app /var/www/html
 
-# Apache mod_rewrite
+# Apache mod_rewrite headers extensions
 RUN a2enmod rewrite
+RUN a2enmod headers
 
 # Php config install extensions
 RUN apt-get update && apt-get install -y \
